@@ -40,7 +40,7 @@ public class AudioBeatMaker : AudioSyncer
     public UnityAction onPlayMusic = () => { };
     public UnityAction<AudioClip> onSetClip = (AudioClip clip) => { };
     public UnityAction<float> whenPlayingMusic = (float time) => { };
-    public UnityAction onBeatMusic = () => { };
+    public UnityAction<float> onBeatMusic = (float time) => { };
     public UnityAction onEndMusic = () => { };
 
     private float audioLength = 0f;
@@ -97,7 +97,7 @@ public class AudioBeatMaker : AudioSyncer
 
             Debug.Log("Data Saved! SavedValue: " + m_audioValue + ", SavedTime: " + audioSource.time);
 
-            onBeatMusic.Invoke();
+            onBeatMusic.Invoke(audioSource.time);
         }
     }
 

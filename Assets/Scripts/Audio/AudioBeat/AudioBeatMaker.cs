@@ -54,10 +54,8 @@ public class AudioBeatMaker : AudioSyncer
 
     private bool prevPlaying = false;
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
-
         sensitivitySlider.maxValue = maxSensitivity;
         timeStepSlider.maxValue = maxTimeStep;
 

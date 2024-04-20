@@ -7,7 +7,7 @@ using UnityEngine;
 /// ..spectrum value given by AudioSpectrum.cs
 /// </summary>
 public class AudioSyncer : MonoBehaviour {
-	protected AudioSource audioSource = null;
+	protected AudioSource audioSource => AudioManager.Instance.GetMainBGMAudioSource();
 	[SerializeField]
 	protected AudioSpectrum audioSpectrum = null;
 	/// <summary>
@@ -54,10 +54,6 @@ public class AudioSyncer : MonoBehaviour {
 		m_timer += Time.deltaTime;
 	}
 
-	protected virtual void Start()
-    {
-		audioSource = audioSpectrum.gameObject.GetComponent<AudioSource>();
-	}
 	protected virtual void Update()
 	{
 		OnUpdate();

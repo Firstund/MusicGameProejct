@@ -23,7 +23,7 @@ public class AudioBeatViewer : MonoBehaviour
     private Vector3 originMarkPosition = Vector3.zero;
 
     [SerializeField]
-    private float xLengthPerSec = 1f;
+    private float xLengthPerSec => BeatDataManager.Instance.XLengthPerSec;
 
     private float audioClipLength = 0f;
     private float currentPlayTime = 0f;
